@@ -8,3 +8,13 @@ As President of Concord-Carlisle Youth Soccer, I really don't care about the out
 * In aggregate, are we doing a good job placing our teams in competitive sections?
 * (Are any towns habitually sand-bagging?)
 
+## Key functions and classes:
+
+### get\_town\_info:
+
+#### get\_town\_table: 
+
+This function takes a 3-letter town code (like 'CON') and returns a dataframe with the town team's current win/loss/draw, GF/GA statistics.
+
+
+
