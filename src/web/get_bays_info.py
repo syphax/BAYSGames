@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import urllib.request as ur
 import pandas as pd
+import re
 
 def get_town_table(town):
 	'''
@@ -61,4 +62,36 @@ def get_town_table(town):
 	'''
 
 	return df_tbl
+
+
+def get_section_names_one_division(year, season, gender, grade, division):
+	'''
+		Returns the names of sections in a division 
+		names = get_section_names_one_division(year, season, gender, grade, division)
+	'''
+
+	url = 'https://bays.org/bays/standings_by_placement/' + season + '%20' + str(year) + '/' + gender + '/' + str(grade) +'/' + str(division) + '/Any'
+	print(url)
+
+	div_page = ur.urlopen(url).read()
+	#print(div_page)
+
+	# Get section counts and names
+
+	# Target string: Standings for Fall 2017 Girls Grade 8 Division 4 Section A
+
+	section_string = b"Standings for .* Section (.*)</a>"
+
+	results = re.findall(section_string,div_page)
+
+	#print(len(results))
+
+	list_section_names = []
+	for i in results:
+		section_name = gender + ' ' + str(grade) + ' ' + str(division) + '/' + i.decode("utf-8")
+		list_section_names.append(section_name)
+		#print(section_name)
+
+	return list_section_names
+
 
