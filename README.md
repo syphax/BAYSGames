@@ -20,3 +20,8 @@ This function takes a 3-letter town code (like 'CON') and returns a dataframe wi
 
 
 
+## Data Sources
+
+BAYS team info and game scores: https://bays.org/
+
+School-age population by town: https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?src=CF
