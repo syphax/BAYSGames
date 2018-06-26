@@ -37,7 +37,7 @@ def main():
 	print(ts)
 
 	print(df_summary)
-	df_summary.to_csv('../results/town-summary-results-'+ts+'.csv')
+	df_summary.to_csv('./results/town-summary-results-'+ts+'.csv')
 
 if __name__ == '__main__':
     main()
